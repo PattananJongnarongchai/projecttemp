@@ -56,7 +56,7 @@ const Profile = () => {
                       onClick={(e) => e.preventDefault()}
                       size="sm"
                     >
-                      Settings
+                      Save Settings
                     </Button>
                   </Col>
                 </Row>
@@ -78,7 +78,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="lucky.jesse"
+                            
                             id="input-username"
                             placeholder="Username"
                             type="text"
@@ -113,7 +113,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="Lucky"
+                            
                             id="input-first-name"
                             placeholder="First name"
                             type="text"
@@ -130,7 +130,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="Jesse"
+                            
                             id="input-last-name"
                             placeholder="Last name"
                             type="text"
@@ -156,7 +156,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                            
                             id="input-address"
                             placeholder="Home Address"
                             type="text"
@@ -175,7 +175,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="New York"
+                            
                             id="input-city"
                             placeholder="City"
                             type="text"
@@ -192,7 +192,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="United States"
+                            
                             id="input-country"
                             placeholder="Country"
                             type="text"
@@ -227,8 +227,7 @@ const Profile = () => {
                         className="form-control-alternative"
                         placeholder="A few words about you ..."
                         rows="4"
-                        defaultValue="A beautiful Dashboard for Bootstrap 4. It is Free and
-                        Open Source."
+                        
                         type="textarea"
                       />
                     </FormGroup>

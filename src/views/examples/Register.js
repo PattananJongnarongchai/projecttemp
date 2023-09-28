@@ -17,7 +17,9 @@
 */
 
 // reactstrap components
+import axios, { Axios } from "axios";
 
+import { useState } from "react";
 import {
   Button,
   Card,
@@ -35,8 +37,37 @@ import {
 
 
 const Register = () => {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [register, setregister] = useState([])
+
+  // const getRegister = () => {
+  //   Axios.get('http://localhost:3001/auth').then((response) => {
+
+  //   })
+  // }
+  const addUser = () => {
+    axios.post('http://localhost:3001/auth', {
+      name: name,
+      email: email,
+      password: password
+    }).then(() => {
+      setregister([
+        ...register,
+        {
+          name: name,
+          email: email,
+          password: password
+        }
+      ])
+
+    })
+  }
   return (
     <>
+    <form action="/user/register" method="POST">
       <Col lg="6" md="8">
         <Card className="bg-secondary shadow border-0">
           <CardHeader className="bg-transparent pb-5">
@@ -92,7 +123,9 @@ const Register = () => {
                       <i className="ni ni-hat-3" />
                     </InputGroupText>
                   </InputGroupAddon>
-                  <Input placeholder="Name" type="text" />
+                  <Input placeholder="Name" type="text" onChange={(event) => {
+                    setName(event.target.value )
+                  }} />
                 </InputGroup>
               </FormGroup>
               <FormGroup>
@@ -106,6 +139,9 @@ const Register = () => {
                     placeholder="Email"
                     type="email"
                     autoComplete="new-email"
+                    onChange={(event) => {
+                      setEmail(event.target.value );
+                    }}
                   />
                 </InputGroup>
               </FormGroup>
@@ -120,6 +156,9 @@ const Register = () => {
                     placeholder="Password"
                     type="password"
                     autoComplete="new-password"
+                    onChange={(event) => {
+                      setPassword(event.target.value )
+                    }}
                   />
                 </InputGroup>
               </FormGroup>
@@ -152,14 +191,14 @@ const Register = () => {
                 </Col>
               </Row>
               <div className="text-center">
-                <Button className="mt-4" color="primary" type="button">
-                  Create account
-                </Button>
+                <button className="btn btn-primary" onClick={addUser}>Register</button>
+
               </div>
             </Form>
           </CardBody>
         </Card>
       </Col>
+      </form>
     </>
   );
 };

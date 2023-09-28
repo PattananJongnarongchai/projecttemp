@@ -17,6 +17,7 @@
 */
 
 // reactstrap components
+// import conn from 'C:\Users\Newbie3jud0\Desktop\projecttemp\database\conn.js'
 import {
   Button,
   Card,
